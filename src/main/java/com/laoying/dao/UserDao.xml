@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laoying.dao.UserDao">
+    <insert id="addUser">
+        insert into T_USER values (USER_SEQ.nextval,#{u_name},#{u_pass})
+    </insert>
+
+    <select id="getUser" resultType="com.laoying.model.User">
+        select * from T_USER
+        <where>
+            <if test="u_name!=null and u_name!='' ">
+                and U_NAME=#{u_name}
+            </if>
+            <if test="u_pass!=null and u_pass!='' ">
+                and U_PASS=#{u_pass}
+            </if>
+        </where>
+    </select>
+</mapper>
