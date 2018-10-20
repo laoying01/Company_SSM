@@ -1,6 +1,8 @@
 package com.laoying.controller;
 
+import com.laoying.model.Resume;
 import com.laoying.model.User;
+import com.laoying.service.ResumeService;
 import com.laoying.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,8 @@ import javax.servlet.http.HttpSession;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private ResumeService resumeService;
     /*跳转登录页面*/
     @RequestMapping("/goLogin")
     public String goLogin()throws Exception{
@@ -53,5 +57,14 @@ public class UserController {
     public String register(User user)throws Exception{
        userService.addUser(user);
        return "login";
+    }
+
+    /*写简历*/
+    @RequestMapping("/writeResume")
+    public String writeResume(Resume resume)throws Exception{
+        if(resumeService.addResume(resume)){
+            return "error";
+        }
+        return "login";
     }
 }
