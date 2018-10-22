@@ -1,13 +1,13 @@
-package com.laoying.dao;
+package com.laoying.service;
 
 import com.laoying.model.Interview;
 
 import java.util.List;
 
-public interface InterviewDao {
+public interface InterviewService {
     boolean addInterview(Interview interview);
-    List<Interview> getInterviews();//申请面试
+    List<Interview> getInterviews();
     Interview getInterview(int i_id);
     List<Interview> findInterviews(int res_id);
-    List<Interview> getInterviewsByState();//通过面试
+    List<Interview> getInterviewsByState();
 }

@@ -2,6 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.laoying.dao.RecruitingDao">
     <select id="getRecruiting" resultType="com.laoying.model.Recruiting">
-        select * from T_RECRUITING;
+        select * from T_RECRUITING
+    </select>
+    <select id="findRecruiting" resultType="com.laoying.model.Recruiting">
+        select * from T_RECRUITING where REC_ID=#{rec_id}
+    </select>
+    <select id="getRec" resultType="com.laoying.model.Recruiting">
+        select * from T_RECRUITING where P_ID=#{p_id}
     </select>
 </mapper>

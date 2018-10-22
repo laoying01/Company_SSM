@@ -31,7 +31,7 @@
         <td>学历:</td>
         <td><input type="text" style="width:92px" name="res_education"></td>
         <td>身份证:</td>
-        <td><input type="text" style="width:200px" name="res_idcard"></td>
+        <td><input type="text" style="width:200px" name="res_idCard"></td>
         <td>年龄:</td>
         <td><input type="text" style="width:48px" name="res_age"></td>
     </tr>
@@ -39,7 +39,7 @@
         <td>求职意向:</td>
         <td width="113"><input type="text" style="width:92px" name="res_job_intention"></td>
         <td>专业及院校:</td>
-        <td colspan="3"><input type="text" style="width:300px" name="major"></td>
+        <td colspan="3"><input type="text" style="width:300px" name="res_major"></td>
     </tr>
     <tr>
         <td>电话:</td>
@@ -47,7 +47,7 @@
         <td>邮箱:</td>
         <td ><input type="text" style="width:200px" name="res_email"></td>
         <td width="91">期望薪资:</td>
-        <td width="48"><input type="text" style="width:48px" name="res_hopesalary"></td>
+        <td width="48"><input type="text" style="width:48px" name="res_hopeSalary"></td>
     </tr>
     <tr>
         <td height="24" colspan="2">住址:</td>

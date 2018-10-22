@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Position implements Serializable {
     private int p_id;
     private String p_position;
+    private int d_id;
 
     public Position(int p_id, String p_position) {
         this.p_id = p_id;
@@ -28,6 +29,14 @@ public class Position implements Serializable {
 
     public void setP_position(String p_position) {
         this.p_position = p_position;
+    }
+
+    public int getD_id() {
+        return d_id;
+    }
+
+    public void setD_id(int d_id) {
+        this.d_id = d_id;
     }
 
     @Override

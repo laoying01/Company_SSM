@@ -16,4 +16,10 @@
     <select id="getResume" resultType="com.laoying.model.Resume">
         select * from T_RESUME where U_ID=#{u_id}
     </select>
+    <select id="getResumes" resultType="com.laoying.model.Resume">
+        select * from T_RESUME
+    </select>
+    <select id="findResume" resultType="com.laoying.model.Resume">
+        select  * from T_RESUME where RES_ID=#{res_id}
+    </select>
 </mapper>

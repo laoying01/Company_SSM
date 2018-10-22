@@ -127,11 +127,11 @@ public class Resume implements Serializable {
         this.res_education = res_education;
     }
 
-    public String getRes_eamil() {
+    public String getRes_email() {
         return res_email;
     }
 
-    public void setRes_eamil(String res_email) {
+    public void setRes_email(String res_email) {
         this.res_email = res_email;
     }
 

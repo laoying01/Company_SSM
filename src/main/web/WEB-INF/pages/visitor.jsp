@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: laoying
-  Date: 2018/10/19
-  Time: 10:02
+  Date: 2018/10/22
+  Time: 21:18
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -16,7 +16,6 @@
     <title>Title</title>
 </head>
 <body>
-<a href="goRecruiting">招聘信息</a>
+<a href="seeInterview">查看面试邀请</a>
 </body>
-
 </html>

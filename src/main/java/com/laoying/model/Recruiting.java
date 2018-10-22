@@ -7,6 +7,7 @@ public class Recruiting implements Serializable {
     private double rec_salary;
     private String rec_position_statement;
     private int p_id;
+    private String rec_time;
 
     public Recruiting() {
     }
@@ -50,6 +51,14 @@ public class Recruiting implements Serializable {
         this.p_id = p_id;
     }
 
+    public String getRec_time() {
+        return rec_time;
+    }
+
+    public void setRec_time(String rec_time) {
+        this.rec_time = rec_time;
+    }
+
     @Override
     public String toString() {
         return "Recruiting{" +
@@ -57,6 +66,7 @@ public class Recruiting implements Serializable {
                 ", rec_salary=" + rec_salary +
                 ", rec_position_statement='" + rec_position_statement + '\'' +
                 ", p_id=" + p_id +
+                ", rec_time='" + rec_time + '\'' +
                 '}';
     }
 }
