@@ -8,4 +8,7 @@
     <select id="getEmpByNameAndPass" resultType="com.laoying.model.Employee">
         select * from T_EMPLOYEE where EMP_ACCOUNT_NUMBER=#{emp_account_number} and EMP_PASS=#{emp_pass}
     </select>
+    <select id="getEmployees" resultType="com.laoying.model.Employee">
+        select * from T_EMPLOYEE where D_ID=#{d_id}
+    </select>
 </mapper>

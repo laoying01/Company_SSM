@@ -25,11 +25,11 @@
             <div class="log">
                 <form action="empLogin" method="post">
                 <div class="name">
-                    <label>用户名</label><input type="text" class="text" id="value_1" placeholder="用户名" name="u_name" tabindex="1">
+                    <label>用户名</label><input type="text" class="text" id="value_1" placeholder="用户名" name="emp_name" tabindex="1">
                 </div>
                 <div class="pwd">
-                    <label>密　码</label><input type="password" class="text" id="value_2" placeholder="密码" name="u_pass" tabindex="2">
-                    <input type="button" class="submit" tabindex="3" value="登录">
+                    <label>密　码</label><input type="password" class="text" id="value_2" placeholder="密码" name="emp_pass" tabindex="2">
+                    <input type="submit" class="submit" tabindex="3" value="登录">
                     <div class="check"></div>
                 </div>
                 </form>

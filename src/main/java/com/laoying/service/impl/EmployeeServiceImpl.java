@@ -6,6 +6,8 @@ import com.laoying.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
@@ -16,5 +18,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public boolean addEmp(Employee employee) {
         return employeeDao.addEmp(employee);
+    }
+
+    public List<Employee> getEmployees(int d_id) {
+        return employeeDao.getEmployees(d_id);
     }
 }

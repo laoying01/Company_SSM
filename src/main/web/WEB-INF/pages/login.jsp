@@ -14,57 +14,60 @@
 <head>
     <base href="<%=basePath%>"/>
     <title>Title</title>
+    <meta name="author" content="order by dede58.com"/>
+    <style type="text/css">
+        <!--
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+        -->
+    </style>
+    <link href="css/css.css" rel="stylesheet" type="text/css" />
 </head>
-<form action="login" method="post">
-    账号：<input type="text" name="u_name"></br>
-    密码：<input type="text" name="u_pass"></br>
-    <input type="submit"value="登录">
-</form>
-<body class="lg-bg" style='background: url("//c-m-bucket.zhaopin.cn/c/m/imgs/6bc1c352-2a80-4955-93d4-bf05f5271ad7.png") left top;'>
-<div class="big-bg"><img class="img-bg" src="//c-m-bucket.zhaopin.cn/c/m/imgs/c7bdf042-3f71-4b2d-9abb-2c47819e3ee3.jpg">
-    <div class="logoinner">
-        <a href="http://www.zhaopin.com/">
-            <img src="/img/common/logo.jpg">
-        </a>
-    </div>
-    <div class="login-box clearfix">
-        <h3 class="login-tit">
-            <span class="login-account-c taCur">用户登录</span>
-            <span class="safe-login">扫码登录</span>
-            <span class="phoneLogoIn">短信登录</span>
-        </h3>
-        <div class="user-login">
-            <form class="inner_form" id="form1" action="javascript: void(0);" method="post" novalidate="novalidate" data-ts="5xGY">
-                <input name="bkurl" id="bkurl" type="hidden" value="">
-                <div class="form border">
-                    <label>用户名</label><input name="loginName" class="ipt" id="loginName" type="text" value="">
-                </div>
-                <div id="alertMessage_loginName" style="color: red;margin-left: 16px;"></div>
-                <div class="form border">
-                    <label>密 码</label><input name="password" class="ipt" id="password" type="password" value="">
-                </div>
-                <div id="alertMessage_password" style="color: red;margin-left: 16px;"><em></em></div>
-                <div>
-                    <input name="submit" class="login-btn __ga__switchTag_loginBtn_001 " id="submit" onclick="ZP.analysis.init_monitor_analy(this,'switchTag','loginBtn','001');;ZP.analysis.init_monitor_analy(this,'switchTag','loginBtn','001');;ZP.analysis.init_monitor_analy(this,'switchTag','loginBtn','001');ZP.analysis.init_monitor_analy(this,'switchTag','loginBtn','001');" type="button" alt="登录" value="登录">
-                </div>
-                <div class="login-forget">
-                    <p>没有智联账号？<a class="__ga__switchTag_regist_001" onclick="ZP.analysis.init_monitor_analy(this,'switchTag','regist','001');;ZP.analysis.init_monitor_analy(this,'switchTag','regist','001');;ZP.analysis.init_monitor_analy(this,'switchTag','regist','001');ZP.analysis.init_monitor_analy(this,'switchTag','regist','001');"></a>
-                        <a id="areg" onclick="recordOutboundLink(this,'newregister','registerbtn_2')" href="/register" data-ts="=P(o}}">立即注册</a></p>
-                    <a class="fr" href="/findPassword/email/step1" target="_blank">忘记密码</a>
-                </div>
-                <div class="otherLogin" style="width: 336px; border-top: 1px dotted #ccc; margin-top: 24px; padding-top: 6px;">
-                    <span class="click_sf" style="margin-left: 120px;cursor: pointer;">使用其他方式登录</span>
-                    <div class="sf_container" style="padding: 4px 0 0 72px; display: none;">
-                        <a class="icon_wx __ga__PCoAuthLogin_wxLogin_001" onclick="ZP.analysis.init_monitor_analy(this,'PCoAuthLogin','wxLogin','001');;ZP.analysis.init_monitor_analy(this,'PCoAuthLogin','wxLogin','001');;thirdLogin('weixin');" href="javascript:void(0)"></a>
-                        <a class="icon_qq __ga__PCoAuthLogin_qqLogin_001" onclick="ZP.analysis.init_monitor_analy(this,'PCoAuthLogin','qqLogin','001');;ZP.analysis.init_monitor_analy(this,'PCoAuthLogin','qqLogin','001');;thirdLogin('qq');" href="javascript:void(0)"></a>
-                        <a class="icon_xl __ga__PCoAuthLogin_weiboLogin_001" onclick="ZP.analysis.init_monitor_analy(this,'PCoAuthLogin','weiboLogin','001');;ZP.analysis.init_monitor_analy(this,'PCoAuthLogin','weiboLogin','001');;thirdLogin('weibo');" href="javascript:void(0)"></a>
-                    </div>
-                </div>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="147" background="images/top02.gif"><img src="images/top03.gif" width="776" height="147" /></td>
+    </tr>
+</table>
+<table width="562" border="0" align="center" cellpadding="0" cellspacing="0" class="right-table03">
+    <tr>
+        <td width="221"><table width="95%" border="0" cellpadding="0" cellspacing="0" class="login-text01">
+
+            <tr>
+                <td><table width="100%" border="0" cellpadding="0" cellspacing="0" class="login-text01">
+                    <tr>
+                        <td align="center"><img src="images/ico13.gif" width="107" height="97" /></td>
+                    </tr>
+                    <tr>
+                        <td height="40" align="center">&nbsp;</td>
+                    </tr>
+
+                </table></td>
+                <td><img src="images/line01.gif" width="5" height="292" /></td>
+            </tr>
+        </table></td>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <form action="login" method="post">
+            <tr>
+                <td width="31%" height="35" class="login-text02">用户名称：<br /></td>
+                <td width="69%"><input name="u_name" type="text" size="30" /></td>
+            </tr>
+            <tr>
+                <td height="35" class="login-text02">密　码：<br /></td>
+                <td><input name="u_pass" type="password" size="33" /></td>
+            </tr>
+            <tr>
+                <td height="35">&nbsp;</td>
+                <td><input name="Submit2" type="submit" class="right-button01" value="确认登陆"  />
+                    <input name="Submit232" type="submit" class="right-button02" value="重 置" /></td>
+            </tr>
             </form>
-        </div>
-            </form>
-        </div>
-    </div>
-</div>
+        </table></td>
+    </tr>
+</table>
 </body>
 </html>

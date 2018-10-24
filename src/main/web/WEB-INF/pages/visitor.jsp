@@ -16,6 +16,6 @@
     <title>Title</title>
 </head>
 <body>
-<a href="seeInterview">查看面试邀请</a>
+<a href="seeInterview">查看面试邀请</a><p>${requestScope.i_msg}</p>
 </body>
 </html>

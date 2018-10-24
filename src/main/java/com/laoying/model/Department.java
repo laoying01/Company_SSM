@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Department implements Serializable {
     private int d_id;
     private String d_department;
-
+    private String d_create_time;
     public Department() {
     }
 
@@ -30,11 +30,20 @@ public class Department implements Serializable {
         this.d_department = d_department;
     }
 
+    public String getD_create_time() {
+        return d_create_time;
+    }
+
+    public void setD_create_time(String d_create_time) {
+        this.d_create_time = d_create_time;
+    }
+
     @Override
     public String toString() {
         return "Department{" +
                 "d_id=" + d_id +
                 ", d_department='" + d_department + '\'' +
+                ", d_create_time='" + d_create_time + '\'' +
                 '}';
     }
 }
