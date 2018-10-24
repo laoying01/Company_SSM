@@ -6,6 +6,8 @@ import com.laoying.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PositionServiceImpl implements PositionService {
     @Autowired
@@ -13,5 +15,9 @@ public class PositionServiceImpl implements PositionService {
     public Position getPosition(int id) {
 
         return positionDao.getPosition(id);
+    }
+
+    public List<Position> getPositions() {
+        return positionDao.getPositions();
     }
 }

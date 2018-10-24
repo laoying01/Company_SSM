@@ -1,6 +1,7 @@
 package com.laoying.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Resume implements Serializable {
     private int res_id;

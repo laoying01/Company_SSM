@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: laoying
@@ -34,7 +35,7 @@
                         ${ud.res_id}
                 </td>
                 <td>
-                    <a href="admitVisitor?admit_visitor_i_id${ud.i_id}">录用</a>
+                    <a href="admitVisitor?admit_visitor_i_id=${ud.i_id}">录用</a>
                 </td>
             </tr>
         </c:forEach>

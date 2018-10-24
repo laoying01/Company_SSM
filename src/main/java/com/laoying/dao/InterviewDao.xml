@@ -2,9 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.laoying.dao.InterviewDao">
     <insert id="addInterview">
-        insert into T_INTERVIEW values(INTERVIEW_SEQ.nextval,#{p_id},#{res_id},#{i_state}
-        ,#{i_interview_time},#{i_upto_time})
+        insert into T_INTERVIEW(I_ID, P_ID, RES_ID, I_STATE, I_INTERVIEW_TIME)
+        values(INTERVIEW_SEQ.nextval,#{p_id},#{res_id},#{i_state}
+        ,#{i_interview_time})
     </insert>
+    <update id="updateInterview">
+        update T_INTERVIEW set I_STATE=#{i_state} where I_ID=#{i_id}
+    </update>
     <select id="getInterviews" resultType="com.laoying.model.Interview">
         select * from T_INTERVIEW where I_STATE=0
     </select>

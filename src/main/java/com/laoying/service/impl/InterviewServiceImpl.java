@@ -31,4 +31,8 @@ public class InterviewServiceImpl implements InterviewService {
     public List<Interview> getInterviewsByState() {
         return interviewDao.getInterviewsByState();
     }
+
+    public boolean updateInterview(Interview interview) {
+        return interviewDao.updateInterview(interview);
+    }
 }

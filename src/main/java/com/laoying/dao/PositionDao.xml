@@ -4,4 +4,7 @@
     <select id="getPosition" resultType="com.laoying.model.Position">
         select * from T_POSITION where P_ID=#{p_id}
     </select>
+    <select id="getPositions" resultType="com.laoying.model.Position">
+        select * from T_POSITION
+    </select>
 </mapper>

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sun.util.calendar.BaseCalendar;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -79,7 +78,8 @@ public class UserController {
         User user1 = userService.getUser(user);
         if (user1 != null) {
             session.setAttribute("user", user1);
-            return "../../index";
+            /*return "../../index";*/
+            return "visitor";
         } else {
             return "error";
         }
@@ -124,7 +124,7 @@ public class UserController {
     public String empLogin(HttpServletRequest request, HttpSession session) throws Exception {
         String name = request.getParameter("emp_name");
         String pass = request.getParameter("emp_pass");
-        Employee employee = employeeService.getEmpByNameAndPass(name, pass);
+        Employee employee = employeeService.getEmpByNameAndPass(new Employee(name,pass));
         if (employee == null) {
             return "error";
         } else {
@@ -188,6 +188,7 @@ public class UserController {
         Resume resume =resumeService.findResume(id);
         Interview interview = interviewService.getInterview(i_id);
         interview.setI_state(1);
+        interviewService.updateInterview(interview);
         session.setAttribute("admin_resume",resume);
         session.setAttribute("interview",interview);
         return "showResume";
@@ -199,10 +200,11 @@ public class UserController {
         //request.getParameter("admin_res_id");
         Interview interview = (Interview) session.getAttribute("interview");
         interview.setI_state(2);
-         Date date =MyUtil.toDate(interview.getI_interview_time());
-         //面试截至时间，3天后
+        Date date =MyUtil.toDate(interview.getI_interview_time());
+        //面试截至时间，3天后
         String interviewTime = MyUtil.toString(MyUtil.addDate(date));
         interview.setI_upto_time(interviewTime);
+        interviewService.updateInterview(interview);
         session.setAttribute("interview",interview);
         return "showInterview";
     }
@@ -228,6 +230,7 @@ public class UserController {
         int id = Integer.parseInt(request.getParameter("visitor_i_id"));
         Interview interview =interviewService.getInterview(id);
         interview.setI_state(3);
+        interviewService.updateInterview(interview);
         session.setAttribute("interview",interview);
         return "visitor";
     }
@@ -249,12 +252,30 @@ public class UserController {
         Department department = departmentService.getDepart(position.getD_id());
         Recruiting recruiting = recruitingService.getRec(position.getP_id());
         Resume resume =resumeService.findResume(interview.getRes_id());
-        String str = resume.getRes_idCard().substring(0,7);
+        String str = resume.getRes_idCard().substring(0,6);
         Employee employee = new Employee(str,str,department.getD_department(),position.getP_position(),
               resume.getRes_gender(),resume.getRes_age(),resume.getRes_birth(),
                 MyUtil.toString(new Date()),recruiting.getRec_salary(),resume.getRes_name()  );
 
         employeeService.addEmp(employee);
         return "admin";
+    }
+
+    @RequestMapping("/asdf")
+    public String asdf()throws Exception{
+        return "resume";
+    }
+    /*跳转添加招聘信息页面*/
+    @RequestMapping("/goAddRecruiting")
+    public String goAddRecruiting(HttpSession session)throws Exception{
+        List<Position> positions =positionService.getPositions();
+        session.setAttribute("positions",positions);
+        return "addRecruiting";
+    }
+    /*添加招聘信息*/
+    @RequestMapping("/addRecruiting")
+    public String addRecruiting()throws Exception{
+        /*recruitingService.addRec();*/
+        return "";
     }
 }

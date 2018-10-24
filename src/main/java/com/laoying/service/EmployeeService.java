@@ -3,6 +3,6 @@ package com.laoying.service;
 import com.laoying.model.Employee;
 
 public interface EmployeeService {
-    Employee getEmpByNameAndPass(String name, String pass);
+    Employee getEmpByNameAndPass(Employee employee);
     boolean addEmp(Employee employee);
 }

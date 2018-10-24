@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeDao employeeDao;
-    public Employee getEmpByNameAndPass(String name, String pass) {
-        return employeeDao.getEmpByNameAndPass(name,pass);
+    public Employee getEmpByNameAndPass(Employee employee) {
+        return employeeDao.getEmpByNameAndPass(employee);
     }
 
     public boolean addEmp(Employee employee) {

@@ -22,4 +22,16 @@ public class RecruitingServiceImpl implements RecruitingService {
     public Recruiting getRec(int p_id) {
         return recruitingDao.getRec(p_id);
     }
+
+    public boolean addRec(Recruiting recruiting) {
+        return recruitingDao.addRec(recruiting);
+    }
+
+    public boolean updateRec(Recruiting recruiting) {
+        return recruitingDao.updateRec(recruiting);
+    }
+
+    public boolean deleteRec(Recruiting recruiting) {
+        return recruitingDao.deleteRec(recruiting);
+    }
 }

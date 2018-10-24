@@ -18,5 +18,6 @@
 <body>
 <a href="showInterview">查看应聘申请</a>
 <a href="showAdmitVisitor">查看面试通过者</a>
+<a href="goAddRecruiting">添加招聘信息</a>
 </body>
 </html>

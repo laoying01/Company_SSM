@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.laoying.dao.RecruitingDao">
+    <insert id="addRec">
+        insert into T_RECRUITING values (REC_SEQ.nextval,#{rec_salary},#{rec_position_statement}
+        ,#{p_id},#{rec_time},#{rec_people_count},#{rec_education})
+    </insert>
+    <update id="updateRec">
+        update T_RECRUITING set REC_SALARY=#{rec_salary},rec_position_statement=#{rec_position_statement},
+        rec_time=#{rec_time},rec_people_count=#{rec_people_count},rec_education=#{rec_education}
+        where rec_id=#{rec_id}
+    </update>
+    <delete id="deleteRec">
+        delete from T_RECRUITING where REC_ID=#{rec_id}
+    </delete>
     <select id="getRecruiting" resultType="com.laoying.model.Recruiting">
         select * from T_RECRUITING
     </select>

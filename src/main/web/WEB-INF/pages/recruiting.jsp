@@ -31,8 +31,8 @@
             <li><a href="goVisitor">游客主页</a></li>
             <li class="wt_nav_bg"><a <%--href=""--%>>【登录】</a>
                 <ul>
-                    <li><a href="login">游客登录</a></li>
-                    <li><a href="empLogin">员工登录</a></li>
+                    <li><a href="goLogin">游客登录</a></li>
+                    <li><a href="goEmpLogin">员工登录</a></li>
                 </ul>
             </li>
             <li class="wt_nav_bg"><a href="goRegister">【注册】</a>
@@ -106,8 +106,8 @@
 
 
                 </td>
-                <td align="center">10人</td>
-                <td align="center">大专                           </td>
+                <td align="center">${i.rec_people_count}</td>
+                <td align="center">${i.rec_education}                           </td>
                 <td align="center">
 
                     2年

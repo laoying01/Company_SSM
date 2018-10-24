@@ -23,7 +23,7 @@
         <td width="92">姓名:</td>
         <td width="92"><input type="text" style="width:92px" name="res_name"></td>
         <td width="120">出生日期:</td>
-        <td width="113"><input type="text" style="width:200px" name="res_birth"></td>
+        <td width="113"><input type="date" style="width:200px" name="res_birth"></td>
         <td width="91">性别:</td>
         <td width="48"><input type="text" style="width:48px" name="res_gender"></td>
     </tr>

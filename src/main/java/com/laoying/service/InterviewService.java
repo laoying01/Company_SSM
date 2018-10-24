@@ -10,4 +10,5 @@ public interface InterviewService {
     Interview getInterview(int i_id);
     List<Interview> findInterviews(int res_id);
     List<Interview> getInterviewsByState();
+    boolean updateInterview(Interview interview);
 }

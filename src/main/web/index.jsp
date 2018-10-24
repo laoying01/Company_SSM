@@ -17,6 +17,7 @@
 </head>
 <body>
 <a href="goRecruiting">招聘信息</a>
+<a href="asdf">跳</a>
 </body>
 
 </html>

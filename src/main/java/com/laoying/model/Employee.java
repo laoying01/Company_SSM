@@ -3,6 +3,7 @@ package com.laoying.model;
 import sun.dc.pr.PRError;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Employee implements Serializable {
     private int emp_id;
@@ -18,6 +19,11 @@ public class Employee implements Serializable {
     private String emp_name;
 
     public Employee() {
+    }
+
+    public Employee(String emp_account_number, String emp_pass) {
+        this.emp_account_number = emp_account_number;
+        this.emp_pass = emp_pass;
     }
 
     public Employee(String emp_account_number, String emp_pass, String emp_department,

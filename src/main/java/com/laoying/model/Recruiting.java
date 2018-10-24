@@ -1,6 +1,7 @@
 package com.laoying.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Recruiting implements Serializable {
     private int rec_id;
@@ -8,6 +9,8 @@ public class Recruiting implements Serializable {
     private String rec_position_statement;
     private int p_id;
     private String rec_time;
+    private int rec_people_count;//人数
+    private String rec_education;//学历
 
     public Recruiting() {
     }
@@ -59,6 +62,22 @@ public class Recruiting implements Serializable {
         this.rec_time = rec_time;
     }
 
+    public int getRec_people_count() {
+        return rec_people_count;
+    }
+
+    public void setRec_people_count(int rec_people_count) {
+        this.rec_people_count = rec_people_count;
+    }
+
+    public String getRec_education() {
+        return rec_education;
+    }
+
+    public void setRec_education(String rec_education) {
+        this.rec_education = rec_education;
+    }
+
     @Override
     public String toString() {
         return "Recruiting{" +
@@ -66,7 +85,9 @@ public class Recruiting implements Serializable {
                 ", rec_salary=" + rec_salary +
                 ", rec_position_statement='" + rec_position_statement + '\'' +
                 ", p_id=" + p_id +
-                ", rec_time='" + rec_time + '\'' +
+                ", rec_time=" + rec_time +
+                ", rec_people_count=" + rec_people_count +
+                ", rec_education='" + rec_education + '\'' +
                 '}';
     }
 }
