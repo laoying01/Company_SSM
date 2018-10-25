@@ -2,13 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.laoying.dao.EmployeeDao">
     <insert id="addEmp">
-        insert into T_EMPLOYEE values (EMP_SEQ.nextval,#{emp_account_number},#{emp_pass},#{emp_department},
-        #{emp_position},#{emp_gender},#{emp_age},#{emp_birth},#{emp_entry_time},#{emp_salary},#{emp_name})
+        insert into T_EMPLOYEE values (EMP_SEQ.nextval,#{emp_account_number},#{emp_pass},#{d_id},
+        #{p_id},#{emp_gender},#{emp_age},#{emp_birth},#{emp_entry_time},#{emp_salary},#{emp_name})
     </insert>
     <select id="getEmpByNameAndPass" resultType="com.laoying.model.Employee">
         select * from T_EMPLOYEE where EMP_ACCOUNT_NUMBER=#{emp_account_number} and EMP_PASS=#{emp_pass}
     </select>
     <select id="getEmployees" resultType="com.laoying.model.Employee">
         select * from T_EMPLOYEE where D_ID=#{d_id}
+    </select>
+    <select id="findEmployees" resultType="com.laoying.model.Employee">
+        select * from T_EMPLOYEE where P_ID=#{p_id}
     </select>
 </mapper>

@@ -18,7 +18,7 @@
 </head>
 <body>
 <form action="addRecruiting" method="post">
-    职位:<select name="p_id">
+    职位:<select name="pid">
         <c:forEach items="${sessionScope.positions}" var="i">
             <option>${i.p_id},${i.p_position}</option>
         </c:forEach>

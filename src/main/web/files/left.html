@@ -81,7 +81,7 @@ function list(idstr){
 				  </tr>
 				  <tr>
 					<td height="22" class="left-font01">
-						[&nbsp;<a href="/empLogin" target="_top" class="left-font01">退出</a>&nbsp;]</td>
+						[&nbsp;<a href="/goEmpLogin" target="_top" class="left-font01">退出</a>&nbsp;]</td>
 				  </tr>
 				</table>
 			</td>
@@ -143,18 +143,18 @@ function list(idstr){
 				<tr>
 				  <td width="9%" height="20" ><img id="xiaotu18" src="../images/ico06.gif" width="8" height="12" /></td>
 				  <td width="91%">
-					<a href="listtakexiaoxi.htm" target="mainFrame" class="left-font03" onClick="tupian('18');">添加招聘信息</a></td>
+					<a href="/selectRecruiting" target="mainFrame" class="left-font03" onClick="tupian('18');">查看招聘信息</a></td>
 				</tr>
 				<tr>
 				  <td width="9%" height="20" ><img id="xiaotu19" src="../images/ico06.gif" width="8" height="12" /></td>
 				  <td width="91%">
-						<a href="listsendxiaoxi.htm" target="mainFrame" class="left-font03" onClick="tupian('19');">发件信息查看
+						<a href="/selectRecruiting" target="mainFrame" class="left-font03" onClick="tupian('19');">修改招聘信息
 							</a></td>
 				</tr>
 				<tr>
 				  <td width="9%" height="20" ><img id="xiaotu24" src="../images/ico06.gif" width="8" height="12" /></td>
 				  <td width="91%">
-						<a href="listxiaoxi.htm" target="mainFrame" class="left-font03" onClick="tupian('24');">消息信息列表
+						<a href="/selectRecruiting" target="mainFrame" class="left-font03" onClick="tupian('24');">删除招聘信息
 							</a></td>
 				</tr>
       </table>
@@ -169,7 +169,7 @@ function list(idstr){
 					<tr>
 						<td width="8%"><img name="img1" id="img1" src="../images/ico04.gif" width="8" height="11" /></td>
 						<td width="92%">
-								<a href="javascript:" target="mainFrame" class="left-font03" onClick="list('1');" >项目系统</a></td>
+								<a href="javascript:" target="mainFrame" class="left-font03" onClick="list('1');" >职位信息</a></td>
 					</tr>
 				</table>
 			</td>
@@ -179,32 +179,21 @@ function list(idstr){
 				cellspacing="0" class="left-table02">
 				<tr>
 				  <td width="9%" height="20" ><img id="xiaotu1" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listxiangmuxinxi.htm" target="mainFrame" class="left-font03" onClick="tupian('1');">项目基本信息查看</a></td>
+				  <td width="91%"><a href="/goLookPosition" target="mainFrame" class="left-font03" onClick="tupian('1');">职位查看</a></td>
 				</tr>
 				<tr>
 				  <td width="9%" height="20" ><img id="xiaotu4" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listjihua.htm" target="mainFrame" class="left-font03" onClick="tupian('4');">项目计划信息查看</a></td>
+				  <td width="91%"><a href="/goAddPosition" target="mainFrame" class="left-font03" onClick="tupian('4');">职位添加</a></td>
 				</tr>
 				<tr>
 				  <td width="9%" height="20" ><img id="xiaotu2" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listxuqiu.htm" target="mainFrame" class="left-font03" onClick="tupian('2');">项目需求信息查看</a></td>
+				  <td width="91%"><a href="/selectPosition" target="mainFrame" class="left-font03" onClick="tupian('2');">职位修改</a></td>
 				</tr>
 				<tr>
 				  <td width="9%" height="20" ><img id="xiaotu5" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listmokuai.htm" target="mainFrame" class="left-font03" onClick="tupian('5');">项目模块信息查看</a></td>
+				  <td width="91%"><a href="/selectPosition" target="mainFrame" class="left-font03" onClick="tupian('5');">职位删除</a></td>
 				</tr>
-				<tr>
-				  <td width="9%" height="20" ><img id="xiaotu3" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listgongneng.htm" target="mainFrame" class="left-font03" onClick="tupian('3');">项目功能信息查看</a></td>
-				</tr>
-				<tr>
-				  <td width="9%" height="20" ><img id="xiaotu6" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listshangchuan.htm" target="mainFrame" class="left-font03" onClick="tupian('6');">项目上传信息查看</a></td>
-				</tr>
-				<tr>
-				  <td width="9%" height="20" ><img id="xiaotu7" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listchengbenxinxi.htm" target="mainFrame" class="left-font03" onClick="tupian('7');">项目成本信息查看</a></td>
-				</tr>
+
       </table>
 		<!--  项目系统结束    -->
 
@@ -214,7 +203,7 @@ function list(idstr){
             <td height="29"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                   <td width="8%" height="12"><img name="img2" id="img2" src="../images/ico04.gif" width="8" height="11" /></td>
-                  <td width="92%"><a href="javascript:" target="mainFrame" class="left-font03" onClick="list('2');" >客户系统</a></td>
+                  <td width="92%"><a href="javascript:" target="mainFrame" class="left-font03" onClick="list('2');" >部门信息</a></td>
                 </tr>
             </table></td>
           </tr>
@@ -223,9 +212,21 @@ function list(idstr){
 	  <table id="subtree2" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="left-table02">
         
 		<tr>
-          <td width="9%" height="20" ><img id="xiaotu7" src="../images/ico06.gif" width="8" height="12" /></td>
-          <td width="91%"><a href="listkehuxinxi.html" target="mainFrame" class="left-font03" onClick="tupian('7');">客户信息查看</a></td>
+          <td width="9%" height="20" ><img id="xiaotu" src="../images/ico06.gif" width="8" height="12" /></td>
+          <td width="91%"><a href="/getDepartment" target="mainFrame" class="left-font03" onClick="tupian('7');">部门查看</a></td>
         </tr>
+		  <tr>
+				  <td width="9%" height="20" ><img id="xiaotu3" src="../images/ico06.gif" width="8" height="12" /></td>
+				  <td width="91%"><a href="/goAddDepartment" target="mainFrame" class="left-font03" onClick="tupian('3');">部门添加</a></td>
+				</tr>
+				<tr>
+				  <td width="9%" height="20" ><img id="xiaotu6" src="../images/ico06.gif" width="8" height="12" /></td>
+				  <td width="91%"><a href="/getDepartment" target="mainFrame" class="left-font03" onClick="tupian('6');">部门修改</a></td>
+				</tr>
+				<tr>
+				  <td width="9%" height="20" ><img id="xiaotu7" src="../images/ico06.gif" width="8" height="12" /></td>
+				  <td width="91%"><a href="/getDepartment" target="mainFrame" class="left-font03" onClick="tupian('7');">部门删除</a></td>
+				</tr>
       </table>
 
 	  <!--  客户系统结束    -->

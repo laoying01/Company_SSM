@@ -1,13 +1,16 @@
 package com.laoying.controller;
 
 import com.laoying.model.Employee;
+import com.laoying.model.Position;
 import com.laoying.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 public class EmployeeController {
@@ -33,5 +36,11 @@ public class EmployeeController {
                 }
             }
         }
+    }
+    /*二级联动*/
+    @RequestMapping("/selectEmp")
+    public @ResponseBody List<Employee> selectEmp(HttpServletRequest request)throws Exception{
+        int s1 = Integer.parseInt(request.getParameter("empId"));
+        return employeeService.findEmployees(s1);
     }
 }

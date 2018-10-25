@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: laoying
@@ -44,11 +45,11 @@
         </c:forEach>
     </table>
 </div>
-<div id="d1">
-    <form>
+<div id="d1" style="display: none">
+    <form action="updateDepartment">
         修改部门<input type="text" name="d_depart" value="${requestScope.depart.d_department}">
         <input type="hidden" name="d_id" value="${requestScope.depart.d_id}">
-        <input type="submit" value="提交" onclick="x()">
+        <input type="submit" value="提交">
     </form>
 </div>
 </body>

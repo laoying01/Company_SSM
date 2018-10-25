@@ -8,4 +8,5 @@ public interface EmployeeDao {
     Employee getEmpByNameAndPass(Employee employee);
     boolean addEmp(Employee employee);
     List<Employee> getEmployees(int d_id);
+    List<Employee> findEmployees(int p_id);
 }

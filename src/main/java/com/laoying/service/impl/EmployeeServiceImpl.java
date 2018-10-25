@@ -23,4 +23,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getEmployees(int d_id) {
         return employeeDao.getEmployees(d_id);
     }
+
+    public List<Employee> findEmployees(int p_id) {
+        return employeeDao.findEmployees(p_id);
+    }
 }

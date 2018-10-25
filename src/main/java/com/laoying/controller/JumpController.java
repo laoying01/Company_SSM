@@ -27,4 +27,5 @@ public class JumpController {
     public String goEmpLogin() throws Exception {
         return "empLogin";
     }
+
 }

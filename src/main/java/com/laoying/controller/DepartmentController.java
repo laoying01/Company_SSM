@@ -17,7 +17,11 @@ import java.util.List;
 public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
-
+    /*跳转添加部门*/
+    @RequestMapping("/goAddDepartment")
+    public String goAddDepartment()throws Exception{
+        return "addDepartment";
+    }
     /*添加部门*/
     @RequestMapping("/addDepartment")
     public String addDepartment(Department department, Model model)throws Exception{
