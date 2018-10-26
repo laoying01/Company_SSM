@@ -11,4 +11,5 @@ public interface PositionDao {
     boolean updatePosition(Position position);
     boolean deletePosition(Position position);
     Position findPosition(Position position);
+    List<Position> getPos(int d_id);
 }

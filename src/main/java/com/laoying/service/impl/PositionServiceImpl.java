@@ -47,4 +47,8 @@ public class PositionServiceImpl implements PositionService {
     public Position findPosition(Position position) {
         return positionDao.findPosition(position);
     }
+
+    public List<Position> getPos(int d_id) {
+        return positionDao.getPos(d_id);
+    }
 }

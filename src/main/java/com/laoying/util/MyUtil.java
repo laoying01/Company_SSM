@@ -46,4 +46,12 @@ public class MyUtil {
         calendar.add(Calendar.DATE,3);
         return calendar.getTime();
     }
+
+    /*日期加30天*/
+    public static Date addDate1(Date date){
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        calendar.add(Calendar.DATE,30);
+        return calendar.getTime();
+    }
 }

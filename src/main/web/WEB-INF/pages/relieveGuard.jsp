@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: laoying
-  Date: 2018/10/25
-  Time: 16:00
+  Date: 2018/10/26
+  Time: 20:11
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,14 +21,14 @@
             $("#s1").change(function () {
                 $.ajax({
                     type:"post",
-                    url:"selectEmp",
+                    url:"selectPos",
                     data:{"posId":$(this).val()},
                     success:function (obj) {
                         $("#s2 option").remove();
                         $("#s2").append("<option value='0'>请选择</option>");
                         for (var i=0;i<obj.length;i++){
-                            $("#s2").append("<option value="+obj[i].emp_id+">"
-                                + obj[i].emp_name + "</option>");
+                            $("#s2").append("<option value="+obj[i].p_id+">"
+                                + obj[i].p_position + "</option>");
                         }
                     }
                 })
@@ -37,14 +37,19 @@
     </script>
 </head>
 <body>
-<select name="changeP" id="s1">
-    <option value="0">请选择</option>
-        <c:forEach items="${sessionScope.pList}" var="p">
-            <option value="${p.p_id}">${p.p_position}</option>
-        </c:forEach>
-</select>
-<select name="changeE" id="s2">
-    <option value="0">请选择</option>
-</select>
+<form action="relieveGuard">
+    <div id="d1">
+        <select name="changeP" id="s1">
+            <option value="0">请选择</option>
+            <c:forEach items="${sessionScope.allDep}" var="p">
+                <option value="${p.d_id}">${p.d_department}</option>
+            </c:forEach>
+        </select>
+        <select name="changeE" id="s2">
+            <option value="0">请选择</option>
+        </select>
+    </div>
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>

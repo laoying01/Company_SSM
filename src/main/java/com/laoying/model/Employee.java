@@ -18,6 +18,7 @@ public class Employee implements Serializable {
     private double emp_salary;
     private String emp_name;
     private int emp_state; //0表示试用期，1表示在职，2表示离职
+    private String emp_dimission_cause;
     public Employee() {
     }
 
@@ -28,7 +29,7 @@ public class Employee implements Serializable {
 
     public Employee(String emp_account_number, String emp_pass, int d_id, int p_id,
                     String emp_gender, int emp_age, String emp_birth, String emp_entry_time,
-                    double emp_salary, String emp_name, int emp_state) {
+                    double emp_salary, String emp_name, int emp_state,String emp_dimission_cause) {
         this.emp_account_number = emp_account_number;
         this.emp_pass = emp_pass;
         this.d_id = d_id;
@@ -40,6 +41,7 @@ public class Employee implements Serializable {
         this.emp_salary = emp_salary;
         this.emp_name = emp_name;
         this.emp_state = emp_state;
+        this.emp_dimission_cause = emp_dimission_cause;
     }
 
     public int getEmp_id() {
@@ -136,6 +138,14 @@ public class Employee implements Serializable {
 
     public void setEmp_name(String emp_name) {
         this.emp_name = emp_name;
+    }
+
+    public String getEmp_dimission_cause() {
+        return emp_dimission_cause;
+    }
+
+    public void setEmp_dimission_cause(String emp_dimission_cause) {
+        this.emp_dimission_cause = emp_dimission_cause;
     }
 
     @Override

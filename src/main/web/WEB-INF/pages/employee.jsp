@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: laoying
-  Date: 2018/10/19
-  Time: 13:31
+  Date: 2018/10/26
+  Time: 20:43
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -16,6 +16,7 @@
     <title>Title</title>
 </head>
 <body>
-错误页面
+<p>${sessionScope.employee.emp_name}</p>
+<a href="dimission?empId="${sessionScope.employee.emp_id}">离职</a>
 </body>
 </html>

@@ -87,9 +87,10 @@ public class AdminController {
         Recruiting recruiting = recruitingService.getRec(position.getP_id());
         Resume resume =resumeService.findResume(interview.getRes_id());
         String str = resume.getRes_idCard().substring(0,6);
+        String str1 ="在职";
         Employee employee = new Employee(str,str,department.getD_id(),position.getP_id(),
                 resume.getRes_gender(),resume.getRes_age(),resume.getRes_birth(),
-                MyUtil.toString(new Date()),recruiting.getRec_salary(),resume.getRes_name(),0 );
+                MyUtil.toString(new Date()),recruiting.getRec_salary(),resume.getRes_name(),0,str1);
 
         employeeService.addEmp(employee);
         return "admin";

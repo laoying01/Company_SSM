@@ -19,4 +19,7 @@
     <select id="findPosition" resultType="com.laoying.model.Position">
         select * from T_POSITION where D_ID=#{d_id} and p_position=#{p_position}
     </select>
+    <select id="getPos" resultType="com.laoying.model.Position">
+        select * from T_POSITION where D_ID=#{d_id}
+    </select>
 </mapper>

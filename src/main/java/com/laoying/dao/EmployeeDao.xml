@@ -3,8 +3,15 @@
 <mapper namespace="com.laoying.dao.EmployeeDao">
     <insert id="addEmp">
         insert into T_EMPLOYEE values (EMP_SEQ.nextval,#{emp_account_number},#{emp_pass},#{d_id},
-        #{p_id},#{emp_gender},#{emp_age},#{emp_birth},#{emp_entry_time},#{emp_salary},#{emp_name})
+        #{p_id},#{emp_gender},#{emp_age},#{emp_birth},#{emp_entry_time},#{emp_salary},#{emp_name},#{emp_state},
+        #{emp_dimission_cause})
     </insert>
+    <update id="updateEmp">
+        update T_EMPLOYEE set EMP_ACCOUNT_NUMBER=#{emp_account_number},emp_pass=#{emp_pass},d_id=#{d_id},
+        p_id=#{p_id},emp_gender=#{emp_gender},emp_age=#{emp_age},emp_birth=#{emp_birth},emp_entry_time=#{emp_entry_time},
+        emp_salary=#{emp_salary},emp_name=#{emp_name},emp_state=#{emp_state},emp_dimission_cause=#{emp_dimission_cause}
+        where emp_id=#{emp_id}
+    </update>
     <select id="getEmpByNameAndPass" resultType="com.laoying.model.Employee">
         select * from T_EMPLOYEE where EMP_ACCOUNT_NUMBER=#{emp_account_number} and EMP_PASS=#{emp_pass}
     </select>
@@ -13,5 +20,14 @@
     </select>
     <select id="findEmployees" resultType="com.laoying.model.Employee">
         select * from T_EMPLOYEE where P_ID=#{p_id}
+    </select>
+    <select id="getAllEmp" resultType="com.laoying.model.Employee">
+        select * from T_EMPLOYEE
+    </select>
+    <select id="getEmp" resultType="com.laoying.model.Employee">
+        select * from T_EMPLOYEE where EMP_ID=#{emp_id}
+    </select>
+    <select id="getEmpByState" resultType="com.laoying.model.Employee">
+        select * from T_EMPLOYEE where EMP_STATE=0
     </select>
 </mapper>

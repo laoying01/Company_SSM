@@ -5,6 +5,7 @@ import com.laoying.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -68,5 +69,12 @@ public class PositionController {
         List<Position> pList =positionService.getPositions();
         session.setAttribute("pList",pList);
         return "lookPosition";
+    }
+
+    /*换岗二级联动*/
+    @RequestMapping()
+    public @ResponseBody List<Position> selectPos(HttpServletRequest request)throws Exception{
+        int id= Integer.parseInt(request.getParameter("posId"));
+        return positionService.getPos(id);
     }
 }

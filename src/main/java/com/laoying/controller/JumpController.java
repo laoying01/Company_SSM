@@ -27,5 +27,9 @@ public class JumpController {
     public String goEmpLogin() throws Exception {
         return "empLogin";
     }
-
+    /*跳转填写离职原因页面*/
+    @RequestMapping("/goDimission")
+    public String goDimission() throws Exception {
+        return "empLogin";
+    }
 }
