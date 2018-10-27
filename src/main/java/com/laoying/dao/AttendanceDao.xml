@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.laoying.dao.AttendanceDao">
+    <insert id="addAttByUp">
+        insert into T_ATTENDANCE(A_ID, A_UP_WORK, A_DATE, EMP_ID, A_STATE) values
+        (ATTENDANCE_SEQ.nextval,#{a_up_work},#{a_date},#{emp_id},#{a_state})
+    </insert>
+    <update id="updateAtt">
+        update T_ATTENDANCE set A_ID=#{a_id},a_up_work=#{a_up_work},a_down_work=#{a_down_work},
+        a_date=#{a_date},emp_id=#{emp_id},a_state=#{a_state} where a_id=#{a_id}
+    </update>
+    <select id="getAttByDate" resultType="com.laoying.model.Attendance" parameterType="hashmap">
+        select * from T_ATTENDANCE where to_char(A_DATE,'yyyy-mm-dd')=#{newDate} and emp_id=#{emp_id}
+    </select>
+</mapper>

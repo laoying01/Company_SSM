@@ -16,7 +16,8 @@
     <title>Title</title>
 </head>
 <body>
-<p>${sessionScope.employee.emp_name}</p>
-<a href="dimission?empId="${sessionScope.employee.emp_id}">离职</a>
+<p>${sessionScope.employee.emp_name}</p><p>${requestScope.msg}</p>
+<a href="dimission?empId=${sessionScope.employee.emp_id}">离职</a>
+<a href="addAttendance?empId=${sessionScope.employee.emp_id}">打卡</a>
 </body>
 </html>

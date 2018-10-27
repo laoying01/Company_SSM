@@ -22,13 +22,23 @@ public class MyUtil {
         return time;
 
     }
+    /*date转String忽略时分秒*/
+    public static String toString1(Date date) {
+        if(date==null) {
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String time = sdf.format(date);
+        return time;
+
+    }
     /**
      * String ==>  Date
      * @param time
      * @return
      */
     public static Date toDate(String time) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
         try {
             date = sdf.parse(time);
@@ -38,7 +48,30 @@ public class MyUtil {
         }
         return date;
     }
-
+    /*去年月日*/
+    public static Date dateTime(Date date){
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        String s = sdf.format(date);
+        Date date1 =null;
+        try {
+            date1=sdf.parse(s);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date1;
+    }
+    /*去时分秒*/
+    public static Date dateToDate(Date date){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String s = sdf.format(date);
+        Date date1 =null;
+        try {
+             date1=sdf.parse(s);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date1;
+    }
     /*日期加3天*/
     public static Date addDate(Date date){
         Calendar calendar = new GregorianCalendar();
