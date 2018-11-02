@@ -25,7 +25,7 @@ public class RecruitingController {
         recruiting.setP_id(Integer.parseInt(arr[0]));
         recruiting.setRec_time(MyUtil.toString(new Date()));
         recruitingService.addRec(recruiting);
-        return "admin";
+        return "showRecruiting";
     }
 
     /*跳转修改招聘信息页面*/
@@ -45,7 +45,7 @@ public class RecruitingController {
     /*删除招聘信息*/
     @RequestMapping("/deleteRecruiting")
     public String deleteRecruiting(HttpSession session,HttpServletRequest request)throws Exception{
-        int id = Integer.parseInt(request.getParameter("recId"));
+        int id = Integer.parseInt(request.getParameter("reId"));
         Recruiting recruiting =recruitingService.findRecruiting(id);
         recruitingService.deleteRec(recruiting);
         return selectRecruiting(session);

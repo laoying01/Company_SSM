@@ -21,7 +21,11 @@ public class InterviewServiceImpl implements InterviewService {
     }
 
     public Interview getInterview(int i_id) {
-        return interviewDao.getInterview(i_id);
+        List<Interview> interviews =interviewDao.getInterview(i_id);
+        if (interviews.size()!=0){
+            return interviews.get(0);
+        }
+        return null;
     }
 
     public List<Interview> findInterviews(int res_id) {

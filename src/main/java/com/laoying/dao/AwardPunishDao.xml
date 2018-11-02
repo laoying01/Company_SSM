@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.laoying.dao.AwardPunishDao">
+    <insert id="addAwardPunish">
+        insert into T_AWARD_PUNISH values (AP_SEQ.nextval,#{ap_salary},#{ap_time},#{ap_cause},#{emp_id})
+    </insert>
+    <update id="updateAwardPunish">
+        update T_AWARD_PUNISH set AP_ID=#{ap_id},ap_salary=#{ap_salary},ap_time=#{ap_time},
+        ap_cause=#{ap_cause},emp_id=#{emp_id} where ap_id=#{ap_id}
+    </update>
+    <select id="getAwardPunish" resultType="com.laoying.model.AwardPunish">
+        select * from T_AWARD_PUNISH where AP_ID=#{ap_id}
+    </select>
+    <select id="getAwardPunishs" resultType="com.laoying.model.AwardPunish">
+        select * from T_AWARD_PUNISH where EMP_ID=#{emp_id}
+    </select>
+    <select id="findAwardPunish" resultType="com.laoying.model.AwardPunish">
+        select * from T_AWARD_PUNISH
+    </select>
+    <select id="getAp" resultType="java.lang.Double">
+        select sum(AP_SALARY) from T_AWARD_PUNISH where  EMP_ID=#{emp_id} and
+        to_char(to_date(AP_TIME,'yyyy-mm-dd HH24:mi:ss'),'mm') =to_char(sysdate,'mm')-1
+    </select>
+</mapper>

@@ -28,7 +28,16 @@
 <div class="head">
     <div class="sheader">
         <ul id="wtdaohang">
-            <li><a href="goVisitor">游客主页</a></li>
+            <li>
+                <c:choose>
+                    <c:when test="${sessionScope.user!=null}">
+                            <a href="goVisitor">游客主页</a>
+                    </c:when>
+                    <c:otherwise>
+                            <a href="goLogin">游客主页</a>
+                    </c:otherwise>
+                </c:choose>
+            </li>
             <li class="wt_nav_bg"><a <%--href=""--%>>【登录】</a>
                 <ul>
                     <li><a href="goLogin">游客登录</a></li>
@@ -45,7 +54,7 @@
 <div class="zwlb_con">
     <div class="zwlb_zj">
         <div style="clear:both;"></div>
-        <div class="zwlb_zj_right">
+        <%--<div class="zwlb_zj_right">
             <form id="formsearch" action="index.php" method="method">
                 <legend><b><font class="f14">分类浏览职位</font></b>&nbsp;<a class="f12" style="COLOR: #666" href="#"></a></legend>
                 <select name="bc" class="basic" id="bc" style="width:185px;" size="1">
@@ -84,7 +93,7 @@
                 <span class="sr">输入关键字 :    <input name="keyword" style="width:210px; height:27px;" type="text" size="15" maxlength="14" placeholder="输入关键字搜索职位或企业" value=""></span>
                 <input class="tyan4 tyan tyan_floating" style="cursor:pointer;" type="submit" value="浏览职位">
             </form>
-        </div>
+        </div>--%>
     </div>
     <div class="zwlb_left">
 

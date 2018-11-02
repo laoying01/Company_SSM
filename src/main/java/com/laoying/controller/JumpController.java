@@ -30,6 +30,22 @@ public class JumpController {
     /*跳转填写离职原因页面*/
     @RequestMapping("/goDimission")
     public String goDimission() throws Exception {
-        return "empLogin";
+        return "addDimission";
+    }
+    /*跳转添加奖惩信息页面*/
+    @RequestMapping("/goAddAwardPunish")
+    public String goAddAwardPunish()throws Exception{
+        return "addAwardPunish";
+    }
+
+    /*跳转添加复议页面*/
+    @RequestMapping("/goAddReconsider")
+    public String goAddReconsider()throws Exception{
+        return "addReconsider";
+    }
+    /*跳转打卡页面*/
+    @RequestMapping("/goAttendance")
+    public String goAttendance()throws Exception{
+        return "attendance";
     }
 }

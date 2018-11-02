@@ -48,6 +48,17 @@ public class MyUtil {
         }
         return date;
     }
+    public static Date toDate1(String time) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = null;
+        try {
+            date = sdf.parse(time);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return date;
+    }
     /*去年月日*/
     public static Date dateTime(Date date){
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");

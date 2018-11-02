@@ -65,7 +65,7 @@ public class DepartmentController {
 
     /*删除部门*/
     @RequestMapping("/deleteDepart")
-    public String deleteDepart(HttpServletRequest request)throws Exception{
+    public String deleteDepart(HttpServletRequest request,HttpSession session)throws Exception{
         int id = Integer.parseInt(request.getParameter("d_id"));
         Department department = new Department();
         department.setD_id(id);
@@ -75,6 +75,16 @@ public class DepartmentController {
         }else {
             request.setAttribute("msg","删除失败");
         }
+        List<Department> departments=departmentService.getDepartments();
+        session.setAttribute("departmentList",departments);
         return "updateDepartment";
+    }
+
+    /*跳转添加部门培训*/
+    @RequestMapping("/goAddTrainings")
+    public String goAddTrainings(Model model)throws Exception{
+        List<Department> departments =departmentService.getDepartments();
+        model.addAttribute("t_d",departments);
+        return "addTrainings";
     }
 }

@@ -35,6 +35,8 @@
                     <td>薪水</td>
                     <td>入职状态</td>
                     <td>离职原因</td>
+                    <td>电话</td>
+                    <td>邮箱</td>
                 </tr>
             </c:if>
             <tr>
@@ -51,6 +53,8 @@
                 <td>${ud.emp_salary}</td>
                 <td>${ud.emp_state}</td>
                 <td>${ud.emp_dimission_cause}</td>
+                <td>${ud.emp_phone}</td>
+                <td>${ud.emp_email}</td>
                 <td>
                     <form action="toRelieveGuard">
                         <input type="hidden" name="employeeId" value="${ud.emp_id}">

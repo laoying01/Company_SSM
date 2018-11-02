@@ -12,4 +12,11 @@
     <select id="getAttByDate" resultType="com.laoying.model.Attendance" parameterType="hashmap">
         select * from T_ATTENDANCE where to_char(A_DATE,'yyyy-mm-dd')=#{newDate} and emp_id=#{emp_id}
     </select>
+    <select id="getAttendance" resultType="com.laoying.model.Attendance">
+        select * from T_ATTENDANCE where EMP_ID=#{emp_id}
+        and to_char(A_DATE,'mm')=to_char(sysdate,'mm')-1
+    </select>
+    <select id="findAttendance" resultType="com.laoying.model.Attendance">
+        select * from T_ATTENDANCE
+    </select>
 </mapper>

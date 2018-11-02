@@ -82,6 +82,8 @@ public class AdminController {
     public String admitVisitor(HttpSession session,HttpServletRequest request)throws Exception{
         int id = Integer.parseInt(request.getParameter("admit_visitor_i_id"));
         Interview interview =interviewService.getInterview(id);
+        interview.setI_state(4);
+        interviewService.updateInterview(interview);
         Position position =positionService.getPosition(interview.getP_id());
         Department department = departmentService.getDepart(position.getD_id());
         Recruiting recruiting = recruitingService.getRec(position.getP_id());
@@ -90,10 +92,11 @@ public class AdminController {
         String str1 ="在职";
         Employee employee = new Employee(str,str,department.getD_id(),position.getP_id(),
                 resume.getRes_gender(),resume.getRes_age(),resume.getRes_birth(),
-                MyUtil.toString(new Date()),recruiting.getRec_salary(),resume.getRes_name(),0,str1);
-
+                MyUtil.toString(new Date()),recruiting.getRec_salary(),resume.getRes_name(),0,str1
+                ,resume.getRes_phone(),resume.getRes_email());
         employeeService.addEmp(employee);
-        return "admin";
+        session.setAttribute("interview",interview);
+        return "admitVisitor";
     }
 
     @RequestMapping("/asdf")

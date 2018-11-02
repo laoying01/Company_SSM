@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 @Service
 public class AttendanceServiceImpl implements AttendanceService {
@@ -23,5 +24,9 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     public boolean updateAtt(Attendance attendance) {
         return attendanceDao.updateAtt(attendance);
+    }
+
+    public List<Attendance> findAttendance() {
+        return attendanceDao.findAttendance();
     }
 }

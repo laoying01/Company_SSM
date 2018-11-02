@@ -19,6 +19,8 @@ public class Employee implements Serializable {
     private String emp_name;
     private int emp_state; //0表示试用期，1表示在职，2表示离职
     private String emp_dimission_cause;
+    private String emp_phone;
+    private String emp_email;
     public Employee() {
     }
 
@@ -42,6 +44,26 @@ public class Employee implements Serializable {
         this.emp_name = emp_name;
         this.emp_state = emp_state;
         this.emp_dimission_cause = emp_dimission_cause;
+    }
+
+    public Employee(String emp_account_number, String emp_pass, int d_id, int p_id, String emp_gender,
+                    int emp_age, String emp_birth, String emp_entry_time, double emp_salary,
+                    String emp_name, int emp_state, String emp_dimission_cause, String emp_phone,
+                    String emp_email) {
+        this.emp_account_number = emp_account_number;
+        this.emp_pass = emp_pass;
+        this.d_id = d_id;
+        this.p_id = p_id;
+        this.emp_gender = emp_gender;
+        this.emp_age = emp_age;
+        this.emp_birth = emp_birth;
+        this.emp_entry_time = emp_entry_time;
+        this.emp_salary = emp_salary;
+        this.emp_name = emp_name;
+        this.emp_state = emp_state;
+        this.emp_dimission_cause = emp_dimission_cause;
+        this.emp_phone = emp_phone;
+        this.emp_email = emp_email;
     }
 
     public int getEmp_id() {
@@ -148,6 +170,22 @@ public class Employee implements Serializable {
         this.emp_dimission_cause = emp_dimission_cause;
     }
 
+    public String getEmp_phone() {
+        return emp_phone;
+    }
+
+    public void setEmp_phone(String emp_phone) {
+        this.emp_phone = emp_phone;
+    }
+
+    public String getEmp_email() {
+        return emp_email;
+    }
+
+    public void setEmp_email(String emp_email) {
+        this.emp_email = emp_email;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -163,6 +201,9 @@ public class Employee implements Serializable {
                 ", emp_salary=" + emp_salary +
                 ", emp_name='" + emp_name + '\'' +
                 ", emp_state=" + emp_state +
+                ", emp_dimission_cause='" + emp_dimission_cause + '\'' +
+                ", emp_phone='" + emp_phone + '\'' +
+                ", emp_email='" + emp_email + '\'' +
                 '}';
     }
 }

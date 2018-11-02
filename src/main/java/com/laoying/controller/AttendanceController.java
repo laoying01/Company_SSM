@@ -9,8 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 @Controller
 public class AttendanceController {
@@ -30,6 +32,7 @@ public class AttendanceController {
         Attendance attendance =attendanceService.getAttByDate(map);
         if (attendance!=null){//为null说明没有记录  新增上班时间
             if (attendance.getA_down_work()==null){//判断下班时间是否为null，true添加下班时间，false显示您打卡成功
+                Attendance attendance1 =attendanceService.getAttByDate(map);
                 Date downDate = new Date();//下班打卡时间
                 //String workTime = MyUtil.toString(downDate);//下班打卡时间字符串
                 String str =date.substring(0,11);//当天时间的年月日截取
@@ -37,15 +40,25 @@ public class AttendanceController {
                 String downTime = str+"18:00:00";//下班时间的字符串
                 Date upDate = MyUtil.toDate(upTime);//上班时间
                 Date workDate =MyUtil.toDate(downTime);//下班时间
-                long time1=newDate.getTime();//上班打卡时间ms
+                long time1=attendance1.getA_up_work().getTime();//上班打卡时间ms
                 long time2 =downDate.getTime();//下班打卡时间ms
                 long time3=upDate.getTime();//上班时间ms
                 long time4 = workDate.getTime();//下班时间ms
                 if(time1-time3>0 ||time4-time2>0){
-                    if(((time1-time3)+(time4-time2))/1000>=10800){
+                    if((time1-time3)/1000>10800 || (time4-time2)/1000>10800){
                         attendance.setA_state(2);
                     }else {
-                        attendance.setA_state(1);
+                        if (time1-time3>0 && time4-time2<0){
+                            attendance.setA_state(1);
+                        }else if (time1-time3>0 && time4-time2>0){
+                            if(((time1-time3)+(time4-time2))/1000>=10800){
+                                attendance.setA_state(2);
+                            }else {
+                                attendance.setA_state(1);
+                            }
+                        }else if (time1-time3<0 && time4-time2>0){
+                            attendance.setA_state(1);
+                        }
                     }
                 }
                 attendance.setA_down_work(downDate);
@@ -58,5 +71,13 @@ public class AttendanceController {
             attendanceService.addAttByUp(new Attendance(newDate,MyUtil.dateToDate(newDate),id,0));
         }
         return "employee";
+    }
+
+    /*查看考勤*/
+    @RequestMapping("/getAttendance")
+    public String getAttendance(HttpSession session)throws Exception{
+        List<Attendance> attendances =attendanceService.findAttendance();
+        session.setAttribute("attendances",attendances);
+        return "showAttendance";
     }
 }

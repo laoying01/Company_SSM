@@ -13,4 +13,5 @@ public interface EmployeeDao {
     boolean updateEmp(Employee employee);
     Employee getEmp(int emp_id);
     List<Employee> getEmpByState();
+    List<Employee> findEmp();
 }

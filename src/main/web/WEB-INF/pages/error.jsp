@@ -17,5 +17,6 @@
 </head>
 <body>
 错误页面
+<a href="goLogin">返回</a>
 </body>
 </html>

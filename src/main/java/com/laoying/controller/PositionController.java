@@ -1,6 +1,8 @@
 package com.laoying.controller;
 
+import com.laoying.model.Employee;
 import com.laoying.model.Position;
+import com.laoying.service.EmployeeService;
 import com.laoying.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,8 @@ import java.util.List;
 public class PositionController {
     @Autowired
     private PositionService positionService;
+    @Autowired
+    private EmployeeService employeeService;
     /*跳转添加添加职位页面*/
     @RequestMapping("/goAddPosition")
     public String goAddPosition()throws Exception{
@@ -52,8 +56,14 @@ public class PositionController {
     public String deleteRecruiting(HttpSession session,HttpServletRequest request)throws Exception{
         int id = Integer.parseInt(request.getParameter("pId"));
         Position p=positionService.getPosition(id);
-        positionService.deletePosition(p);
-        return selectPosition(session);
+        List<Employee> employees =employeeService.findEmployees(id);
+        if (employees.size()!=0){
+            return selectPosition(session);
+        }else {
+            positionService.deletePosition(p);
+            return selectPosition(session);
+        }
+
     }
     /*查看所有职位*/
     @RequestMapping("/selectPosition")
@@ -72,7 +82,7 @@ public class PositionController {
     }
 
     /*换岗二级联动*/
-    @RequestMapping()
+    @RequestMapping("/selectPos")
     public @ResponseBody List<Position> selectPos(HttpServletRequest request)throws Exception{
         int id= Integer.parseInt(request.getParameter("posId"));
         return positionService.getPos(id);

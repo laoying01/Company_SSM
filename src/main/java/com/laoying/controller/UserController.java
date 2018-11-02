@@ -87,8 +87,24 @@ public class UserController {
         }
         return "error";
     }
-
-
+    /*跳转到修改简历页面*/
+    @RequestMapping("/goUpdateResume")
+    public String goUpdateResume(HttpSession session,Model model)throws Exception{
+        User user = (User) session.getAttribute("user");
+        Resume resume = resumeService.getResume(user.getU_id());
+        if (resume==null){
+            model.addAttribute("i_msg","您还没有简历");
+        }
+        session.setAttribute("v_resume",resume);
+        return "updateResume";
+    }
+    /*修改简历*/
+    @RequestMapping("/updateResume")
+    public String updateResume(HttpSession session,Resume resume)throws Exception{
+        resumeService.updateResume(resume);
+        session.setAttribute("v_resume",resume);
+        return "updateResume";
+    }
     /*游客查看面试邀请*/
     @RequestMapping("/seeInterview")
     public String seeInterview(HttpSession session,Model model)throws Exception{

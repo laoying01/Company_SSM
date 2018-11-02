@@ -45,7 +45,7 @@
                     <a href="goUpdateRecruiting?resId=${ud.rec_id}">修改</a>
                 </td>
                 <td>
-                    <a href="selectRecruiting?resId=${ud.rec_id}">删除</a>
+                    <a href="deleteRecruiting?reId=${ud.rec_id}">删除</a>
                 </td>
             </tr>
         </c:forEach>

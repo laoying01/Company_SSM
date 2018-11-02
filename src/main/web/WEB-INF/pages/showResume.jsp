@@ -75,7 +75,7 @@
     </tr>
     <tr align="center">
         <td colspan="7">${sessionScope.admin_resume.res_about_me}
-		=</td>
+		</td>
     </tr>
 </table>
 <form action="comeInterview" method="post">

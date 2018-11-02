@@ -250,12 +250,12 @@ function list(idstr){
         </tr>
 		<tr>
           <td width="9%" height="20" ><img id="xiaotu9" src="../images/ico06.gif" width="8" height="12" /></td>
-          <td width="91%"><a href="listzhiwu.htm" target="mainFrame" class="left-font03" onClick="tupian('9');">职务信息查看</a></td>
+          <td width="91%"><a href="/getEmpByState" target="mainFrame" class="left-font03" onClick="tupian('9');">员工转正</a></td>
         </tr>
-		<tr>
+		<!--<tr>
           <td width="9%" height="20" ><img id="xiaotu10" src="../images/ico06.gif" width="8" height="12" /></td>
           <td width="91%"><a href="listMonthYuanGongGongZi.htm" target="mainFrame" class="left-font03" onClick="tupian('10');">员工工作情况查看</a></td>
-        </tr>
+        </tr>-->
       </table>
 	
 	  <!--  人员系统结束    -->
@@ -266,7 +266,7 @@ function list(idstr){
             <td height="29"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                   <td width="8%" height="12"><img name="img4" id="img4" src="../images/ico04.gif" width="8" height="11" /></td>
-                  <td width="92%"><a href="javascript:" target="mainFrame" class="left-font03" onClick="list('4');" >考勤系统</a></td>
+                  <td width="92%"><a href="javascript:" target="mainFrame" class="left-font03" onClick="list('4');" >考勤信息</a></td>
                 </tr>
             </table></td>
           </tr>
@@ -275,12 +275,12 @@ function list(idstr){
 	  <table id="subtree4" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="left-table02">
 		<tr>
           <td width="9%" height="20" ><img id="xiaotu11" src="../images/ico06.gif" width="8" height="12" /></td>
-          <td width="91%"><a href="listGongZiType.htm" target="mainFrame" class="left-font03" onClick="tupian('11');">考勤类型查看</a></td>
+          <td width="91%"><a href="/getAttendance" target="mainFrame" class="left-font03" onClick="tupian('11');">考勤查看</a></td>
         </tr>
-	  	<tr>
+	  	<!--<tr>
           <td width="9%" height="20" ><img id="xiaotu12" src="../images/ico06.gif" width="8" height="12" /></td>
           <td width="91%"><a href="listMonthYuanGongGongZi.htm" target="mainFrame" class="left-font03" onClick="tupian('12');">员工考勤信息查看</a></td>
-        </tr>
+        </tr>-->
       </table>
 
       <!--  考勤系统结束    -->
@@ -291,7 +291,7 @@ function list(idstr){
             <td height="29"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                   <td width="8%"><img name="img5" id="img5" src="../images/ico04.gif" width="8" height="11" /></td>
-                  <td width="92%"><a href="javascript:" target="mainFrame" class="left-font03" onClick="list('5');">系统管理</a></td>
+                  <td width="92%"><a href="javascript:" target="mainFrame" class="left-font03" onClick="list('5');">培训信息</a></td>
                 </tr>
             </table></td>
           </tr>
@@ -300,12 +300,17 @@ function list(idstr){
 	  <table id="subtree5" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="left-table02">
         <tr>
           <td width="9%" height="20"><img id="xiaotu13" src="../images/ico06.gif" width="8" height="12" /></td>
-          <td width="91%"><a href="register.html" target="mainFrame" class="left-font03" onClick="tupian('13');">添加用户</a></td>
+          <td width="91%"><a href="/goAddTraining" target="mainFrame" class="left-font03" onClick="tupian('13');">添加员工培训</a></td>
         </tr>
         <tr>
           <td height="20"><img id="xiaotu14" src="../images/ico06.gif" width="8" height="12" /></td>
-          <td><a href="addquanxian.html" target="mainFrame" class="left-font03" onClick="tupian('14');">添加角色</a></td>
+          <td><a href="/goAddTrainings" target="mainFrame" class="left-font03" onClick="tupian('14');">添加部门培训</a></td>
         </tr>
+		  <tr>
+			  <td width="9%" height="23" ><img id="xiaotu23" src="../images/ico06.gif" width="8" height="12" /></td>
+			  <td width="91%"><a href="/getTrainings" target="mainFrame" class="left-font03"
+								 onClick="tupian('23');">查看培训信息</a></td>
+		  </tr>
       </table>
 	  <!-- 管理系统结束-->
 
@@ -316,7 +321,7 @@ function list(idstr){
           <td height="29"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
                 <td width="8%"><img name="img6" id="img6" src="../images/ico04.gif" width="8" height="11" /></td>
-                <td width="92%"><a href="mode.html" target="mainFrame" class="left-font03" onClick="list('6');">系统帮助</a></td>
+                <td width="92%"><a href="javascript:" target="mainFrame" class="left-font03" onClick="list('6');">奖惩信息</a></td>
               </tr>
           </table></td>
         </tr>
@@ -324,11 +329,11 @@ function list(idstr){
 	  <table id="subtree6" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="left-table02">
         <tr>
           <td width="9%" height="20"><img id="xiaotu15" src="../images/ico06.gif" width="8" height="12" /></td>
-          <td width="91%"><a href="mode.html" target="mainFrame" class="left-font03" onClick="tupian('15');">用户手册</a></td>
+          <td width="91%"><a href="/goAddAwardPunish" target="mainFrame" class="left-font03" onClick="tupian('15');">添加奖惩信息</a></td>
         </tr>
         <tr>
           <td height="20"><img id="xiaotu16" src="../images/ico06.gif" width="8" height="12" /></td>
-          <td><a href="mode.html" target="mainFrame" class="left-font03" onClick="tupian('16');">规章制度</a></td>
+          <td><a href="/getAwardPunish" target="mainFrame" class="left-font03" onClick="tupian('16');">查看奖惩信息</a></td>
         </tr>
       </table>
 	 <!-- 系统帮助结束-->
@@ -342,7 +347,7 @@ function list(idstr){
 					<tr>
 						<td width="8%"><img name="img9" id="img9" src="../images/ico04.gif" width="8" height="11" /></td>
 						<td width="92%">
-								<a href="javascript:" target="mainFrame" class="left-font03" onClick="list('9');" >个人管理</a></td>
+								<a href="javascript:" target="mainFrame" class="left-font03" onClick="list('9');" >薪资信息</a></td>
 					</tr>
 				</table>
 			</td>
@@ -353,17 +358,35 @@ function list(idstr){
 				cellspacing="0" class="left-table02">
 				<tr>
 				  <td width="9%" height="22" ><img id="xiaotu22" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listgerenxinxi.htm" target="mainFrame" class="left-font03" 
-						onClick="tupian('22');">个人信息查看</a></td>
+				  <td width="91%"><a href="/getSalary" target="mainFrame" class="left-font03"
+						onClick="tupian('22');">查看薪资</a></td>
 				</tr>
-				<tr>
-				  <td width="9%" height="23" ><img id="xiaotu23" src="../images/ico06.gif" width="8" height="12" /></td>
-				  <td width="91%"><a href="listgerenrenwu.htm" target="mainFrame" class="left-font03" 
-						onClick="tupian('23');">任务信息查看</a></td>
-				</tr>
+
       </table>
 		<!--  个人信息结束    -->
+		<TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
+			<tr>
+				<td height="29">
+					<table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="8%"><img name="img10" id="img10" src="../images/ico04.gif" width="8" height="11" /></td>
+							<td width="92%">
+								<a href="javascript:" target="mainFrame" class="left-font03" onClick="list('10');" >复议信息</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</TABLE>
 
+		<table id="subtree10" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0"
+			   cellspacing="0" class="left-table02">
+			<tr>
+				<td width="9%" height="22" ><img id="xiaotu25" src="../images/ico06.gif" width="8" height="12" /></td>
+				<td width="91%"><a href="/getReconsider" target="mainFrame" class="left-font03"
+								   onClick="tupian('29');">查看复议信息</a></td>
+			</tr>
+
+		</table>
 	  </TD>
   </tr>
   

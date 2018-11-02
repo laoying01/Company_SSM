@@ -51,6 +51,6 @@ public class InterviewController {
         interview.setI_state(3);
         interviewService.updateInterview(interview);
         session.setAttribute("interview",interview);
-        return "visitor";
+        return "visitorInterview";
     }
 }

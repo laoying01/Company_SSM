@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -87,8 +88,10 @@ public class EmployeeController {
     public String dimission(HttpSession session,HttpServletRequest request)throws Exception{
        Employee employee = (Employee) session.getAttribute("employee");
        String str =request.getParameter("dimission");
+       employee.setEmp_dimission_cause(str);
+       employee.setEmp_state(2);
        employeeService.updateEmp(employee);
-       return "employee";
+       return "addDimission";
     }
     /*查看试用期员工*/
     @RequestMapping("/getEmpByState")
@@ -109,7 +112,53 @@ public class EmployeeController {
         }else {
             employee.setEmp_state(1);
             employeeService.updateEmp(employee);
-            return "employee";
+            return "probationPeriod";
         }
+    }
+
+    /*跳转添加培训页面*/
+    @RequestMapping("/goAddTraining")
+    public String goAddTraining(HttpSession session)throws Exception{
+        List<Employee> employees=employeeService.getAllEmp();
+        List<Employee> list = new ArrayList<Employee>();
+        for (int i = 0; i <employees.size() ; i++) {
+            if (employees.get(i).getEmp_state()!=2){
+                list.add(employees.get(i));
+            }
+        }
+        session.setAttribute("t_e",list);
+        return "addTraining";
+    }
+    /*修改员工自己信息*/
+    @RequestMapping("/updateEmployee")
+    public String updateEmployee(HttpServletRequest request,HttpSession session)throws Exception{
+        String emp_phone = request.getParameter("emp_phone");
+        String emp_pass = request.getParameter("emp_pass");
+        String emp_email = request.getParameter("emp_email");
+        Employee employee = (Employee) session.getAttribute("employee");
+        employee.setEmp_pass(emp_pass);
+        employee.setEmp_phone(emp_phone);
+        employee.setEmp_email(emp_email);
+        employeeService.updateEmp(employee);
+        return "updateEmployee";
+    }
+    /*跳转修改自己信息页面*/
+    @RequestMapping("/goUpdateEmployee")
+    public String goUpdateEmployee()throws Exception{
+        return "updateEmployee";
+    }
+    /*查看自己信息*/
+    @RequestMapping("/showEmployeeMe")
+    public String showEmployeeMe(HttpSession session)throws Exception{
+        Employee employee = (Employee) session.getAttribute("employee");
+        session.setAttribute("employee",employee);
+        return "showEmployeeByme";
+    }
+    /*查看其他员工信息*/
+    @RequestMapping("/showOtherEmp")
+    public String showOtherEmp(HttpSession session)throws Exception{
+        List<Employee> employees =employeeService.findEmp();
+        session.setAttribute("o_emp",employees);
+        return "showotherEmp";
     }
 }
