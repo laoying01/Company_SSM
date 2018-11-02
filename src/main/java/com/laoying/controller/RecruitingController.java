@@ -40,7 +40,7 @@ public class RecruitingController {
     @RequestMapping("/updateRecruiting")
     public String updateRecruiting(HttpSession session,Recruiting recruiting)throws Exception{
         recruitingService.updateRec(recruiting);
-        return selectRecruiting(session);
+        return selectRecruiting(session) ;
     }
     /*删除招聘信息*/
     @RequestMapping("/deleteRecruiting")
